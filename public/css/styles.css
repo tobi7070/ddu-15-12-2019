@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+    background-color: #888888;
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff; 
+}
+
+footer {
+    padding: 20px;
+    background-color: #888888;
+}
