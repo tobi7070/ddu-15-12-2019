@@ -16,19 +16,22 @@ class Bootstrap
         if (file_exists($file)) {
             require $file;
         } else {
-	    echo "Error!";
+            require "controllers/httpError.php";
+            $controller = new HttpError();
+            $controller->loadModel("httpError");
+            $controller->index();
             return false;
         }
 
         $controller = new $path[0];
+        $controller->loadModel($path[0]);
 
         if (isset($path[2])) {
             $controller->{$path[1]}($path[2]);
         } elseif (isset($path[1])) {
             $controller->{$path[1]}();
         } else {
-            // defualt
+            $controller->index();
         }
-
     }
 }
