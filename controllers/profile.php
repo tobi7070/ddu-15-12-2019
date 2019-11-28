@@ -37,4 +37,9 @@ class Profile extends Controller
         $this->model->xhrGetInserts();
     }
 
+    public function xhrRemoveInsert()
+    {
+        $this->model->xhrRemoveInsert();
+    }
+
 }

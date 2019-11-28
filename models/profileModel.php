@@ -16,9 +16,15 @@ class ProfileModel extends Model
             ':user_id' => $user_id,
             ':text' => $text
         ));
+        $data = array(
+            'id' => $this->database->lastInsertedId(),
+            'text' => $text
+        );
+        echo json_encode($data);
     }
 
-    public function xhrGetInserts() {
+    public function xhrGetInserts()
+    {
         $user_id = $_SESSION['id'];
 
         $dbh = $this->database->prepare("SELECT * FROM notes WHERE user_id = :user_id");
@@ -28,5 +34,14 @@ class ProfileModel extends Model
         ));
         $data = $dbh->fetchAll();
         echo json_encode($data);
+    }
+
+    public function xhrRemoveInsert()
+    {
+        $id = $_POST['id'];
+        $dbh = $this->database->prepare("DELETE FROM notes WHERE id = :id");
+        $dbh->execute(array(
+            ':id' => $id
+        ));   
     }
 }
