@@ -7,7 +7,7 @@
     <?php
     if (isset($this->script)) {
         foreach($this->script as $script) {
-            echo '<script type="" src="'. URL . 'views/'. $script .'"></script>';
+            echo '<script type="text/javascript" src="'. URL . 'views/'. $script .'"></script>';
         }
     }
     ?>
