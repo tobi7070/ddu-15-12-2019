@@ -22,13 +22,20 @@ class QuizModel extends Model
             ':quizzes_id' => $id
         ));
         $data = $dbh->fetchAll();
-
         return $data;
     }
 
     public function saveResult($data)
     {
-        // Save result to database
+        $users_id = Session::get('id');
+        $result = json_encode($data);
+        $score = array_sum($data)/(count($data)*5);
+        $dbh = $this->database->prepare("INSERT INTO results (users_id, result, score) VALUES (:users_id, :result, :score)");
+        $dbh->execute(array(
+            ':users_id' => $users_id,
+            ':result' => $result,
+            ':score'=> $score
+        ));
+        return $score;
     }
-    
 }

@@ -26,8 +26,13 @@ class Quiz extends Controller
         $this->view->render("quiz/takeQuiz");
     }
 
-    public function saveResult($id)
+    public function saveResult()
     {
         $data = array();
+        foreach($_POST as $key => $value) {
+            $data[$key] = $value;
+        }
+        $this->view->saveResult = $this->model->saveResult($data);
+        $this->view->render("quiz/result");
     }
 }

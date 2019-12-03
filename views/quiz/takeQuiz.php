@@ -1,7 +1,6 @@
 <h1>Find dit {Quiz navn} barometer</h1>
 <form action="<?php echo URL;?>quiz/saveResult/" method="post">
 <?php
-print_r($this->takeQuiz);
 foreach($this->takeQuiz as $key => $value) {
     echo '<fieldset id="'.$value['id'].'">';
     echo '<legend>'.$value['question'].'</legend>';
