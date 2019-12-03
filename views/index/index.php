@@ -1,1 +1,1 @@
-<h1>This is index!</h1>
+<h1>Dette er forside!</h1>

@@ -15,16 +15,17 @@
 <body>
     <header>
         <?php Session::init(); ?>
-        This is the header...
-        <a href="<?php echo URL;?>">Index</a>
+        Dette er "header"...
+        <a href="<?php echo URL;?>">Forside</a>
         <?php if(Session::get('loggedIn') == true):?>
-            <a href="<?php echo URL;?>profile">Profile</a>
+            <a href="<?php echo URL;?>profile">Min profil</a>
+            <a href="<?php echo URL;?>quiz">Test dig selv</a>
             <?php if(Session::get('role') == 'admin'):?>
-            <a href="<?php echo URL;?>manage">Manage</a>
+            <a href="<?php echo URL;?>manage">Administration</a>
             <?php endif; ?>
-            <a href="<?php echo URL;?>profile/logout">Logout</a>
+            <a href="<?php echo URL;?>profile/logout">Log ud</a>
         <?php else:?>
-        <a href="<?php echo URL;?>login">Login</a>
+        <a href="<?php echo URL;?>login">Log ind</a>
         <?php endif;?>
     </header>
     <main>

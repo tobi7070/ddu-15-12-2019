@@ -5,19 +5,30 @@ class QuizModel extends Model
     {
         parent::__construct();
     }
-            
-    public function getQuestions()
-    {
 
+    public function quizList()
+    {
+        $dbh = $this->database->prepare("SELECT id, name FROM quizzes"); 
+        $dbh->execute();
+        $data = $dbh->fetchAll();
+
+        return $data;
     }
 
-    public function getAnswers()
+    public function takeQuiz($id)
     {
-        
+        $dbh = $this->database->prepare("SELECT id, question FROM questions WHERE quizzes_id = :quizzes_id"); 
+        $dbh->execute(array(
+            ':quizzes_id' => $id
+        ));
+        $data = $dbh->fetchAll();
+
+        return $data;
     }
 
-    public function getResults()
+    public function saveResult($data)
     {
-
+        // Save result to database
     }
+    
 }

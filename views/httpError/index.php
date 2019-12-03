@@ -1,1 +1,1 @@
-<h1>This is httpError!</h1>
+<h1>Dette er httpError!</h1>

@@ -1,6 +1,6 @@
     </main>
     <footer>
-        This is the footer...
+        Dette er "footer"...
     </footer>
 </body>
 </html>

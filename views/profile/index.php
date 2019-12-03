@@ -1,13 +1,13 @@
-<h1>Welcome <?php echo ucfirst(Session::get('name'));?>!</h1>
+<h1>Velkommen <?php echo ucfirst(Session::get('name'));?>!</h1>
 <?php echo Session::get('role');echo Session::get('id');echo Session::get('company');?>
 
-<p>You have been logged in!</p>
+<p>Du er nu logget ind!</p>
 <br>
-<h2>Add notes</h2>
+<h2>Tilføj note</h2>
 <form id="xhrInsert" action="<?php echo URL; ?>profile/xhrInsert/" method="post">
     <input type="text" name="text">
     <input type="submit">
 </form>
 <br>
-<h2>My notes</h2>
+<h2>Mine noter</h2>
 <div id="listInserts"></div>

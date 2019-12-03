@@ -6,32 +6,28 @@ class Quiz extends Controller
         parent::__construct();
         Session::init();
         $logged = Session::get('loggedIn');
-        if (!$logged == true) {
+        $role = Session::get('role');
+        if ($logged == false) {
             Session::destroy();
             header('location: ./login');
             exit();
         }
-
-        // $this->view->script = array("profile/js/script.js");
     }
 
     public function index()
     {
+        $this->view->quizList = $this->model->quizList();
         $this->view->render("quiz/index");
     }
-    
-    public function getQuestions()
+
+    public function takeQuiz($id)
     {
-        $this->model->getQuestions();
+        $this->view->takeQuiz = $this->model->takeQuiz($id);
+        $this->view->render("quiz/takeQuiz");
     }
 
-    public function getAnswers()
+    public function saveResult($id)
     {
-        $this->model->getAnswers();
-    }
-
-    public function getResults()
-    {
-        $this->model->getResults();
+        $data = array();
     }
 }
