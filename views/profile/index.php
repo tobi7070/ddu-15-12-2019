@@ -1,4 +1,6 @@
-<h1>Welcome <?php print_r($_SESSION['name']);?>!</h1>
+<h1>Welcome <?php echo ucfirst(Session::get('name'));?>!</h1>
+<?php echo Session::get('role');echo Session::get('id');echo Session::get('company');?>
+
 <p>You have been logged in!</p>
 <br>
 <h2>Add notes</h2>
@@ -6,9 +8,6 @@
     <input type="text" name="text">
     <input type="submit">
 </form>
-
 <br>
 <h2>My notes</h2>
-<ul id="listInserts">
-
-</ul>
+<div id="listInserts"></div>

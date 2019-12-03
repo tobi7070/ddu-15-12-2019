@@ -41,5 +41,4 @@ class Profile extends Controller
     {
         $this->model->xhrRemoveInsert();
     }
-
 }

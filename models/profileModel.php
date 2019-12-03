@@ -8,16 +8,16 @@ class ProfileModel extends Model
 
     public function xhrInsert()
     {
-        $user_id = $_SESSION['id'];
+        $users_id = Session::get('id');
         $text = $_POST['text'];
 
-        $dbh = $this->database->prepare("INSERT INTO notes (user_id, text) VALUES (:user_id, :text)"); 
+        $dbh = $this->database->prepare("INSERT INTO notes (users_id, text) VALUES (:users_id, :text)"); 
         $dbh->execute(array(
-            ':user_id' => $user_id,
+            ':users_id' => $users_id,
             ':text' => $text
         ));
         $data = array(
-            'id' => $this->database->lastInsertedId(),
+            'id' => $this->database->lastInsertId(),
             'text' => $text
         );
         echo json_encode($data);
@@ -25,12 +25,12 @@ class ProfileModel extends Model
 
     public function xhrGetInserts()
     {
-        $user_id = $_SESSION['id'];
+        $users_id = Session::get('id');
 
-        $dbh = $this->database->prepare("SELECT * FROM notes WHERE user_id = :user_id");
+        $dbh = $this->database->prepare("SELECT * FROM notes WHERE users_id = :users_id");
         $dbh->setFetchMode(PDO::FETCH_ASSOC);
         $dbh->execute(array(
-            ':user_id' => $user_id
+            ':users_id' => $users_id
         ));
         $data = $dbh->fetchAll();
         echo json_encode($data);

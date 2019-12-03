@@ -16,10 +16,15 @@
     <header>
         <?php Session::init(); ?>
         This is the header...
-        <?php if(Session::get('loggedIn') == true) : ?>
+        <a href="<?php echo URL;?>">Index</a>
+        <?php if(Session::get('loggedIn') == true):?>
+            <a href="<?php echo URL;?>profile">Profile</a>
+            <?php if(Session::get('role') == 'admin'):?>
+            <a href="<?php echo URL;?>manage">Manage</a>
+            <?php endif; ?>
             <a href="<?php echo URL;?>profile/logout">Logout</a>
-        <?php else : ?>
-            <a href="<?php echo URL;?>login">Login</a>
-        <?php endif; ?>
+        <?php else:?>
+        <a href="<?php echo URL;?>login">Login</a>
+        <?php endif;?>
     </header>
     <main>
