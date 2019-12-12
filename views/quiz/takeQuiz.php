@@ -1,4 +1,4 @@
-<h1>Find dit {Quiz navn} barometer</h1>
+<h1>Find dit barometer</h1>
 <form action="<?php echo URL;?>quiz/saveResult/" method="post">
 <?php
 foreach($this->takeQuiz as $key => $value) {

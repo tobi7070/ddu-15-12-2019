@@ -9,7 +9,7 @@
         <option value="default">Default</option>
         <option value="admin">Admin</option>
     </select><br>
-    <input type="submit">
+    <input type="submit" value="Bekræft">
 </form>
 <hr>
 <h2>Eskisterende brugere</h2>
@@ -20,7 +20,7 @@
         echo '<td>' . $value['id'] . '</td>';
         echo '<td>' . $value['username'] . '</td>';
         echo '<td>' . ucfirst($value['role']) . '</td>';
-        echo '<td><a href="'.URL.'manage/edit/'.$value['id'].'">Edit</a> <a href="'.URL.'manage/delete/'.$value['id'].'">Delete</a></td>';
+        echo '<td><a href="'.URL.'manage/edit/'.$value['id'].'">Rediger</a> <a href="'.URL.'manage/delete/'.$value['id'].'">Slet</a></td>';
         echo '</tr>';
     }
 ?>

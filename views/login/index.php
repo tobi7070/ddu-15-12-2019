@@ -5,5 +5,5 @@
     <input type="text" name="username" id="username"><br>
     <label for="password">Adgangskode:</label>
     <input type="password" name="password" id="password"><br>
-    <input type="submit">
+    <input type="submit" value="Log ind">
 </form>

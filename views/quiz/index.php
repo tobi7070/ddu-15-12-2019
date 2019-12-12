@@ -7,7 +7,7 @@
         echo '<tr>';
         echo '<td>' . $value['id'] . '</td>';
         echo '<td>' . $value['name'] . '</td>';
-        echo '<td><a href="'.URL.'quiz/takeQuiz/'.$value['id'].'">Take now</a></td>';
+        echo '<td><a href="'.URL.'quiz/takeQuiz/'.$value['id'].'">Tag nu</a></td>';
         echo '</tr>';
     }
 ?>
