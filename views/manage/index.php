@@ -1,5 +1,5 @@
 <h1>Administration</h1>
-<hr>
+<br>
 <h2>Tifløj bruger</h2>
 <form action="<?php echo URL;?>manage/create" method="POST">
     <label for="username">Brugernavn:</label>
@@ -11,7 +11,7 @@
     </select><br>
     <input type="submit" value="Bekræft">
 </form>
-<hr>
+<br>
 <h2>Eskisterende brugere</h2>
 <table>
 <?php
@@ -25,4 +25,4 @@
     }
 ?>
 </table>
-<hr>
+<br>

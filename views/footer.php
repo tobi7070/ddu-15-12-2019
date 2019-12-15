@@ -1,6 +1,10 @@
     </main>
+    </div>
+    <div class="footer">
     <footer>
-        Dette er "footer"...
+        Copyright &copy; 2019
     </footer>
+    </div>
+</div>
 </body>
 </html>

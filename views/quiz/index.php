@@ -1,5 +1,5 @@
 <h1>Mine test</h1>
-<hr>
+<br>
 <h2>Vælg en test</h2>
 <table>
 <?php
@@ -12,4 +12,4 @@
     }
 ?>
 </table>
-<hr>
+<br>

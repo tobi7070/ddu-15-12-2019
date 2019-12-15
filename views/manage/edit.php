@@ -1,4 +1,5 @@
 <h2>Rediger bruger</h2>
+<br>
 <form action="<?php echo URL;?>manage/confirmEdit/<?php echo $this->user['id'];?>" method="POST">
     <label for="username">Brugernavn</label>
     <input type="text" name="username" id="username" value="<?php echo $this->user['username'];?>"><br>

@@ -3,7 +3,7 @@
 <br>
 <h2>Tilføj note</h2>
 <form id="xhrInsert" action="<?php echo URL; ?>profile/xhrInsert/" method="post">
-    <input type="text" name="text">
+    <input type="text" name="text"><br>
     <input type="submit" value="Gem">
 </form>
 <br>

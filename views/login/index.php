@@ -1,4 +1,4 @@
-<h1>Dette er log ind!</h1>
+<h1>Log ind</h1>
 
 <form action="login/run" method="post">
     <label for="username">Brugeranvn:</label>
