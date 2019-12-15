@@ -1,19 +1,131 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
-    padding: 20px;
-    background-color: #888888;
+h1 {
+    color: #0066ff;
 }
 
-main {
-    padding: 20px;
-    background-color: #ffffff; 
+.body {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: auto 800px auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        ". main ."
+        "footer footer footer";
 }
 
-footer {
-    padding: 20px;
-    background-color: #888888;
+.header {
+    grid-area: header;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+
+    background-color: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+}
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #000000;
+
+    transition-property: color, background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+nav li a b {
+    color: #0066ff;
+}
+
+nav li a:hover {
+    color: #ffffff;
+    background-color: #0066ff;
+}
+
+nav li a:hover#logo  {
+    color: #0066ff;
+    background-color: #ffffff;
+}
+
+nav li a:active {
+    color: #ffffff;
+    background-color: #0066ff;
+}
+
+nav li a:active#logo  {
+    color: #0066ff;
+    background-color: #ffffff;
+}
+
+.main {
+    grid-area: main;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);;
+    padding: 4rem;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #444444;
+    color: #ffffff;
+    padding: 1rem;
+}
+
+fieldset {
+    padding:16px;	
+    border:2px solid #000000;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+input[type=submit] {
+    background-color: #0066ff;
+    border:2px solid #0066ff;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 800px) {
+    .body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+    }
 }
